@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>rawan banjir</title>
+    <title>WebGIS</title>
     <link rel="stylesheet" href="library/leaflet/leaflet.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="library/leaflet/leaflet.js"></script>
@@ -13,7 +13,7 @@
 <body>
     <div id="map">
         <script>
-            var map = L.map('map').setView([-7.766135, 110.490598], 13);
+            var map = L.map('map').setView([-7.760999, 110.492642], 13);
 
             var baseLayers = {
                 'Esri WorldTopoMap': L.tileLayer.provider('Esri.WorldTopoMap'),
@@ -41,18 +41,18 @@
                         )
                 }
             });
-            $.getJSON("data/rawanbanjirJSON.json", function(data) {
+            $.getJSON("data/rawanbanjir geo.json", function(data) {
                 AreaRawanBanjir.addData(data);
             });
 
-			/* Merubah Tampilan Warna Berdasar Atribut Klas Banjir */
-			var KlasBanjir = {
-				"aman":"#006100",
-				"cukup aman":"#7bab00",
-				"agak aman":"#ffff00",
-				"rawan":"#ff9900",
-				"sangat rawan":"#ff2200"
-			};
+            /* Merubah Tampilan Warna Berdasar Atribut Klas Banjir */
+            var KlasBanjir = {
+                "aman":"#006100",
+                "cukup aman":"#7bab00",
+                "agak aman":"#ffff00",
+                "rawan":"#ff9900",
+                "sangat rawan":"#ff2200"
+            };
 
             var mapLayers = {
                 'Area Rawan Banjir': AreaRawanBanjir
